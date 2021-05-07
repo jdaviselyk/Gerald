@@ -8,6 +8,7 @@
 import * as React from "react"
 import PropTypes from "prop-types"
 import { useStaticQuery, graphql } from "gatsby"
+import { Global, css } from "@emotion/react"
 
 import Header from "./header"
 import "./layout.css"
@@ -25,17 +26,33 @@ const Layout = ({ children }) => {
 
   return (
     <>
-      <Header siteTitle={data.site.siteMetadata?.title || `Title`} />
-      <div style={{}}>
+      <Global
+        styles={css`
+          a {
+            color: goldenrod;
+          }
+
+          .container {
+            width: 100%;
+            max-width: 65em;
+            margin: 0 auto;
+            display: block;
+          }
+        `}
+      />
+      <Header siteTitle={data.site.siteMetadata?.title} />
+      <div>
         <main>{children}</main>
         <footer
-          style={{
-            marginTop: `2rem`,
-          }}
+          css={css`
+            margin-top: 2rem;
+          `}
         >
-          © {new Date().getFullYear()}, Built with
-          {` `}
-          <a href="https://www.gatsbyjs.com">Gatsby</a>
+          <div className="container">
+            © {new Date().getFullYear()}, Built with
+            {` `}
+            <a href="https://www.gatsbyjs.com">Gatsby</a>
+          </div>
         </footer>
       </div>
     </>
