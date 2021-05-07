@@ -11,6 +11,8 @@ const Header = ({ siteTitle }) => (
       background-color: rebeccapurple;
     `}
   >
+    {/* Here I'm using a global container class 
+    to wrap our content and constrain the width */}
     <div className="container">
       <h1 style={{ margin: 0 }}>
         <Link
