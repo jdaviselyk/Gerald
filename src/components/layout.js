@@ -31,7 +31,7 @@ const Layout = ({ children }) => {
       You import the provided "Global" component and write CSS in the "styles" prop that it expects.
       Notice it's "styles" versus the "style" prop we put on normal html elements. 
       They just happen to be named similarly. (This is one reason i prefer Styled Components) 
-      Here's a concise article about how to do it in Styled Components
+      Here's a concise article about how to do it in Styled Components: https://scalablecss.com/styled-components-global-styles/
       */}
       <Global
         styles={css`
