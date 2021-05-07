@@ -1,21 +1,19 @@
 import * as React from "react"
 import PropTypes from "prop-types"
 import { Link } from "gatsby"
+import { css } from "@emotion/react"
 
 const Header = ({ siteTitle }) => (
   <header
-    style={{
-      background: `rebeccapurple`,
-      marginBottom: `1.45rem`,
-    }}
+    css={css`
+      padding: 1rem 0;
+      margin-bottom: 2rem;
+      background-color: rebeccapurple;
+    `}
   >
-    <div
-      style={{
-        margin: `0 auto`,
-        maxWidth: 960,
-        padding: `1.45rem 1.0875rem`,
-      }}
-    >
+    {/* Here I'm using a global container class 
+    to wrap our content and constrain the width */}
+    <div className="container">
       <h1 style={{ margin: 0 }}>
         <Link
           to="/"
